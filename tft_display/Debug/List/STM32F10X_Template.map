@@ -1,0 +1,409 @@
+###############################################################################
+#
+# IAR ELF Linker V8.32.2.178/W32 for ARM                  17/Mar/2019  00:34:45
+# Copyright 2007-2018 IAR Systems AB.
+#
+#    Output file  =  
+#        E:\IAR Systems\workspace\tft_display\Debug\Exe\STM32F10X_Template.out
+#    Map file     =  
+#        E:\IAR Systems\workspace\tft_display\Debug\List\STM32F10X_Template.map
+#    Command line =  
+#        -f C:\Users\93244\AppData\Local\Temp\EWA5B4.tmp ("E:\IAR
+#        Systems\workspace\tft_display\Debug\Obj\delay.o" "E:\IAR
+#        Systems\workspace\tft_display\Debug\Obj\dht11.o" "E:\IAR
+#        Systems\workspace\tft_display\Debug\Obj\gpio_config.o" "E:\IAR
+#        Systems\workspace\tft_display\Debug\Obj\gui.o" "E:\IAR
+#        Systems\workspace\tft_display\Debug\Obj\key.o" "E:\IAR
+#        Systems\workspace\tft_display\Debug\Obj\main.o" "E:\IAR
+#        Systems\workspace\tft_display\Debug\Obj\misc.o" "E:\IAR
+#        Systems\workspace\tft_display\Debug\Obj\startup_stm32f10x_md.o"
+#        "E:\IAR Systems\workspace\tft_display\Debug\Obj\stm32f10x_adc.o"
+#        "E:\IAR Systems\workspace\tft_display\Debug\Obj\stm32f10x_bkp.o"
+#        "E:\IAR Systems\workspace\tft_display\Debug\Obj\stm32f10x_can.o"
+#        "E:\IAR Systems\workspace\tft_display\Debug\Obj\stm32f10x_cec.o"
+#        "E:\IAR Systems\workspace\tft_display\Debug\Obj\stm32f10x_crc.o"
+#        "E:\IAR Systems\workspace\tft_display\Debug\Obj\stm32f10x_dac.o"
+#        "E:\IAR Systems\workspace\tft_display\Debug\Obj\stm32f10x_dbgmcu.o"
+#        "E:\IAR Systems\workspace\tft_display\Debug\Obj\stm32f10x_dma.o"
+#        "E:\IAR Systems\workspace\tft_display\Debug\Obj\stm32f10x_exti.o"
+#        "E:\IAR Systems\workspace\tft_display\Debug\Obj\stm32f10x_flash.o"
+#        "E:\IAR Systems\workspace\tft_display\Debug\Obj\stm32f10x_fsmc.o"
+#        "E:\IAR Systems\workspace\tft_display\Debug\Obj\stm32f10x_gpio.o"
+#        "E:\IAR Systems\workspace\tft_display\Debug\Obj\stm32f10x_i2c.o"
+#        "E:\IAR Systems\workspace\tft_display\Debug\Obj\stm32f10x_it.o"
+#        "E:\IAR Systems\workspace\tft_display\Debug\Obj\stm32f10x_iwdg.o"
+#        "E:\IAR Systems\workspace\tft_display\Debug\Obj\stm32f10x_pwr.o"
+#        "E:\IAR Systems\workspace\tft_display\Debug\Obj\stm32f10x_rcc.o"
+#        "E:\IAR Systems\workspace\tft_display\Debug\Obj\stm32f10x_rtc.o"
+#        "E:\IAR Systems\workspace\tft_display\Debug\Obj\stm32f10x_sdio.o"
+#        "E:\IAR Systems\workspace\tft_display\Debug\Obj\stm32f10x_spi.o"
+#        "E:\IAR Systems\workspace\tft_display\Debug\Obj\stm32f10x_tim.o"
+#        "E:\IAR Systems\workspace\tft_display\Debug\Obj\stm32f10x_usart.o"
+#        "E:\IAR Systems\workspace\tft_display\Debug\Obj\stm32f10x_wwdg.o"
+#        "E:\IAR Systems\workspace\tft_display\Debug\Obj\system.o" "E:\IAR
+#        Systems\workspace\tft_display\Debug\Obj\system_stm32f10x.o" "E:\IAR
+#        Systems\workspace\tft_display\Debug\Obj\tft.o" "E:\IAR
+#        Systems\workspace\tft_display\Debug\Obj\timer.o" --no_out_extension -o
+#        "E:\IAR
+#        Systems\workspace\tft_display\Debug\Exe\STM32F10X_Template.out" --map
+#        "E:\IAR
+#        Systems\workspace\tft_display\Debug\List\STM32F10X_Template.map"
+#        --config "E:\IAR Systems\Embedded Workbench
+#        8.2\arm\config\linker\ST\stm32f103x8.icf" --semihosting --entry
+#        __iar_program_start --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because no calls to memory allocation
+functions were found in the application outside of system library
+functions, and there are calls to deallocation functions in the
+application.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at 0x800'0000 { ro section .intvec };
+"P1":  place in [from 0x800'0000 to 0x800'ffff] { ro };
+define block CSTACK with size = 2K, alignment = 8 { };
+define block HEAP with size = 2K, alignment = 8 { };
+"P2":  place in [from 0x2000'0000 to 0x2000'4fff] {
+          rw, block CSTACK, block HEAP };
+initialize by copy { rw };
+
+  Section            Kind         Address    Size  Object
+  -------            ----         -------    ----  ------
+"A0":                                        0xec
+  .intvec            ro code   0x800'0000    0xec  startup_stm32f10x_md.o [1]
+                             - 0x800'00ec    0xec
+
+"P1":                                      0x2983
+  .text              ro code   0x800'00ec   0xb64  gui.o [1]
+  .text              ro code   0x800'0c50   0x574  tft.o [1]
+  .text              ro code   0x800'11c4    0x36  strlen.o [3]
+  .text              ro code   0x800'11fc    0x40  stm32f10x_rcc.o [1]
+  .text              ro code   0x800'123c    0xe0  stm32f10x_gpio.o [1]
+  .text              ro code   0x800'131c    0x62  stm32f10x_spi.o [1]
+  .text              ro code   0x800'1380    0xa0  misc.o [1]
+  .text              ro code   0x800'1420    0xa8  delay.o [1]
+  .rodata            const     0x800'14c8   0x5f0  gui.o [1]
+  .rodata            const     0x800'1ab8   0x474  gui.o [1]
+  .rodata            const     0x800'1f2c   0x208  gui.o [1]
+  .text              ro code   0x800'2134   0x17c  key.o [1]
+  .text              ro code   0x800'22b0    0x30  stm32f10x_exti.o [1]
+  .text              ro code   0x800'22e0   0x164  dht11.o [1]
+  .rodata            const     0x800'2444   0x128  gui.o [1]
+  .text              ro code   0x800'256c   0x118  system_stm32f10x.o [1]
+  .rodata            const     0x800'2684   0x110  gui.o [1]
+  .text              ro code   0x800'2794    0x74  gpio_config.o [1]
+  .text              ro code   0x800'2808    0x6c  main.o [1]
+  .text              ro code   0x800'2874    0x38  packbits_init_single.o [3]
+  .text              ro code   0x800'28ac    0x28  data_init.o [3]
+  .iar.init_table    const     0x800'28d4    0x10  - Linker created -
+  .text              ro code   0x800'28e4    0x1e  cmain.o [3]
+  .text              ro code   0x800'2902     0x4  low_level_init.o [2]
+  .text              ro code   0x800'2906     0x4  exit.o [2]
+  .text              ro code   0x800'290c     0xa  cexit.o [3]
+  .text              ro code   0x800'2918    0x14  exit.o [4]
+  .text              ro code   0x800'292c    0x1c  timer.o [1]
+  .rodata            const     0x800'2948    0x10  main.o [1]
+  .rodata            const     0x800'2958    0x10  main.o [1]
+  .text              ro code   0x800'2968    0x10  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'2978    0x10  stm32f10x_it.o [1]
+  .text              ro code   0x800'2988     0xc  cstartup_M.o [3]
+  .text              ro code   0x800'2994     0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'2998     0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'299c     0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'29a0     0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'29a4     0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'29a8     0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'29ac     0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'29b0     0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'29b4     0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'29b8     0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'29bc     0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'29c0     0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'29c4     0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'29c8     0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'29cc     0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'29d0     0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'29d4     0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'29d8     0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'29dc     0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'29e0     0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'29e4     0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'29e8     0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'29ec     0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'29f0     0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'29f4     0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'29f8     0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'29fc     0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'2a00     0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'2a04     0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'2a08     0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'2a0c     0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'2a10     0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'2a14     0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'2a18     0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'2a1c     0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'2a20     0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'2a24     0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'2a28     0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'2a2c     0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'2a30     0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'2a34     0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'2a38     0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'2a3c     0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'2a40     0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'2a44     0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'2a48     0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'2a4c     0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'2a50     0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'2a54     0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'2a58     0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'2a5c     0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'2a60     0x4  startup_stm32f10x_md.o [1]
+  .rodata            const     0x800'2a64     0x0  packbits_init_single.o [3]
+  Initializer bytes  const     0x800'2a64     0xb  <for P2-1>
+                             - 0x800'2a6f  0x2983
+
+"P2", part 1 of 2:                           0x31
+  P2-1                        0x2000'0000    0x31  <Init block>
+    .data            inited   0x2000'0000     0x4  system_stm32f10x.o [1]
+    .bss             inited   0x2000'0004     0xc  dht11.o [1]
+    .bss             inited   0x2000'0010    0x10  tft.o [1]
+    .bss             inited   0x2000'0020     0x4  timer.o [1]
+    .data            inited   0x2000'0024     0x2  gui.o [1]
+    .bss             inited   0x2000'0026     0x2  delay.o [1]
+    .bss             inited   0x2000'0028     0x2  key.o [1]
+    .bss             inited   0x2000'002a     0x2  key.o [1]
+    .bss             inited   0x2000'002c     0x2  key.o [1]
+    .bss             inited   0x2000'002e     0x2  key.o [1]
+    .bss             inited   0x2000'0030     0x1  delay.o [1]
+                            - 0x2000'0031    0x31
+
+"P2", part 2 of 2:                          0x800
+  CSTACK                      0x2000'0038   0x800  <Block>
+    CSTACK           uninit   0x2000'0038   0x800  <Block tail>
+                            - 0x2000'0838   0x800
+
+Unused ranges:
+
+         From           To    Size
+         ----           --    ----
+   0x800'2a6f   0x800'ffff  0xd591
+  0x2000'0031  0x2000'0037     0x7
+  0x2000'0838  0x2000'4fff  0x47c8
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address      Size
+          -------      ----
+Copy/packbits (__iar_packbits_init_single3)
+    1 source range, total size 0xb (22% of destination):
+           0x800'2a64   0xb
+    1 destination range, total size 0x31:
+          0x2000'0000  0x31
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                  ro code  ro data  rw data
+    ------                  -------  -------  -------
+command line/config:
+    -------------------------------------------------
+    Total:
+
+E:\IAR Systems\workspace\tft_display\Debug\Obj: [1]
+    delay.o                     168        1        3
+    dht11.o                     356        3       12
+    gpio_config.o               116
+    gui.o                     2 916    3 748        2
+    key.o                       380        2        8
+    main.o                      108       32
+    misc.o                      160
+    startup_stm32f10x_md.o      460
+    stm32f10x_exti.o             48
+    stm32f10x_gpio.o            224
+    stm32f10x_it.o               16
+    stm32f10x_rcc.o              64
+    stm32f10x_spi.o              98
+    system_stm32f10x.o          280                 4
+    tft.o                     1 396        4       16
+    timer.o                      28        1        4
+    -------------------------------------------------
+    Total:                    6 818    3 791       49
+
+dl7M_tlf.a: [2]
+    exit.o                        4
+    low_level_init.o              4
+    -------------------------------------------------
+    Total:                        8
+
+rt7M_tl.a: [3]
+    cexit.o                      10
+    cmain.o                      30
+    cstartup_M.o                 12
+    data_init.o                  40
+    packbits_init_single.o       56
+    strlen.o                     54
+    -------------------------------------------------
+    Total:                      202
+
+shb_l.a: [4]
+    exit.o                       20
+    -------------------------------------------------
+    Total:                       20
+
+    Gaps                          8
+    Linker created                        16    2 048
+-----------------------------------------------------
+    Grand Total:              7 056    3 807    2 097
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address   Size  Type      Object
+-----                       -------   ----  ----      ------
+.iar.init_table$$Base    0x800'28d4          --   Gb  - Linker created -
+.iar.init_table$$Limit   0x800'28e4          --   Gb  - Linker created -
+?main                    0x800'28e5         Code  Gb  cmain.o [3]
+BusFault_Handler         0x800'297f    0x2  Code  Gb  stm32f10x_it.o [1]
+CSTACK$$Base            0x2000'0038          --   Gb  - Linker created -
+CSTACK$$Limit           0x2000'0838          --   Gb  - Linker created -
+Data_Buff               0x2000'0004    0xc  Data  Gb  dht11.o [1]
+DebugMon_Handler         0x800'2985    0x2  Code  Gb  stm32f10x_it.o [1]
+EXTI15_10_IRQHandler     0x800'2135  0x164  Code  Gb  key.o [1]
+EXTI_ClearITPendingBit   0x800'22d1    0x6  Code  Gb  stm32f10x_exti.o [1]
+EXTI_GetITStatus         0x800'22b1   0x20  Code  Gb  stm32f10x_exti.o [1]
+GPIO_Init                0x800'123d   0xc0  Code  Gb  stm32f10x_gpio.o [1]
+GPIO_ReadInputDataBit    0x800'12fd   0x14  Code  Gb  stm32f10x_gpio.o [1]
+GPIO_ResetBits           0x800'1317    0x6  Code  Gb  stm32f10x_gpio.o [1]
+GPIO_SetBits             0x800'1311    0x6  Code  Gb  stm32f10x_gpio.o [1]
+GUI_DrawFont16           0x800'0465  0x148  Code  Gb  gui.o [1]
+GUI_DrawFont24           0x800'05ad  0x148  Code  Gb  gui.o [1]
+GUI_DrawFont32           0x800'06f5  0x146  Code  Gb  gui.o [1]
+HardFault_Handler        0x800'297b    0x2  Code  Gb  stm32f10x_it.o [1]
+LCD_Clear                0x800'1065   0x44  Code  Gb  tft.o [1]
+LCD_Clear_Part           0x800'10a9   0x48  Code  Gb  tft.o [1]
+LCD_DrawPoint            0x800'0dfb   0x16  Code  Gb  tft.o [1]
+LCD_Init                 0x800'0e39  0x22c  Code  Gb  tft.o [1]
+LCD_RESET                0x800'0e11   0x28  Code  Gb  tft.o [1]
+LCD_SetCursor            0x800'116d   0x18  Code  Gb  tft.o [1]
+LCD_SetParam             0x800'1185   0x26  Code  Gb  tft.o [1]
+LCD_SetWindows           0x800'10f1   0x7c  Code  Gb  tft.o [1]
+LCD_ShowChar             0x800'00ed  0x220  Code  Gb  gui.o [1]
+LCD_ShowNum              0x800'034d  0x118  Code  Gb  gui.o [1]
+LCD_WR_DATA              0x800'0d7f   0x24  Code  Gb  tft.o [1]
+LCD_WR_DATA_16Bit        0x800'0da3   0x36  Code  Gb  tft.o [1]
+LCD_WR_REG               0x800'0d5b   0x24  Code  Gb  tft.o [1]
+LCD_WriteRAM_Prepare     0x800'0ded    0xe  Code  Gb  tft.o [1]
+LCD_WriteReg             0x800'0dd9   0x14  Code  Gb  tft.o [1]
+MemManage_Handler        0x800'297d    0x2  Code  Gb  stm32f10x_it.o [1]
+NMI_Handler              0x800'2979    0x2  Code  Gb  stm32f10x_it.o [1]
+NVIC_Init                0x800'138b   0x60  Code  Gb  misc.o [1]
+NVIC_PriorityGroupConfig
+                         0x800'1381    0xa  Code  Gb  misc.o [1]
+POINT_COLOR             0x2000'0024    0x2  Data  Gb  gui.o [1]
+PendSV_Handler           0x800'2987    0x2  Code  Gb  stm32f10x_it.o [1]
+RCC_APB1PeriphClockCmd   0x800'1219   0x1c  Code  Gb  stm32f10x_rcc.o [1]
+RCC_APB2PeriphClockCmd   0x800'11fd   0x1c  Code  Gb  stm32f10x_rcc.o [1]
+Region$$Table$$Base      0x800'28d4          --   Gb  - Linker created -
+Region$$Table$$Limit     0x800'28e4          --   Gb  - Linker created -
+SPI2_Init                0x800'0d33   0x28  Code  Gb  tft.o [1]
+SPI_Cmd                  0x800'135b   0x1c  Code  Gb  stm32f10x_spi.o [1]
+SPI_I2S_ClearFlag        0x800'1377    0x8  Code  Gb  stm32f10x_spi.o [1]
+SPI_Init                 0x800'131d   0x3e  Code  Gb  stm32f10x_spi.o [1]
+SPI_WriteByte            0x800'0c51   0x16  Code  Gb  tft.o [1]
+SVC_Handler              0x800'2983    0x2  Code  Gb  stm32f10x_it.o [1]
+SetSysClock              0x800'25b1    0x8  Code  Lc  system_stm32f10x.o [1]
+SetSysClockTo72          0x800'25b9   0xae  Code  Lc  system_stm32f10x.o [1]
+Show_Str                 0x800'083b  0x1be  Code  Gb  gui.o [1]
+SysTick_CLKSourceConfig
+                         0x800'13eb   0x1c  Code  Gb  misc.o [1]
+SysTick_Handler          0x800'293d    0x8  Code  Gb  timer.o [1]
+SystemCoreClock         0x2000'0000    0x4  Data  Gb  system_stm32f10x.o [1]
+SystemInit               0x800'256d   0x44  Code  Gb  system_stm32f10x.o [1]
+TimerDelay_Decrement     0x800'292d   0x10  Code  Gb  timer.o [1]
+TimingDelay             0x2000'0020    0x4  Data  Gb  timer.o [1]
+UsageFault_Handler       0x800'2981    0x2  Code  Gb  stm32f10x_it.o [1]
+__cmain                  0x800'28e5         Code  Gb  cmain.o [3]
+__exit                   0x800'2919   0x14  Code  Gb  exit.o [4]
+__iar_data_init3         0x800'28ad   0x28  Code  Gb  data_init.o [3]
+__iar_packbits_init_single3
+                         0x800'2875   0x38  Code  Gb  packbits_init_single.o [3]
+__iar_program_start      0x800'2989         Code  Gb  cstartup_M.o [3]
+__low_level_init         0x800'2903    0x4  Code  Gb  low_level_init.o [2]
+__vector_table           0x800'0000         Data  Gb  startup_stm32f10x_md.o [1]
+_call_main               0x800'28f1         Code  Gb  cmain.o [3]
+_exit                    0x800'290d         Code  Gb  cexit.o [3]
+_main                    0x800'28ff         Code  Gb  cmain.o [3]
+asc2_1206                0x800'1ab8  0x474  Data  Gb  gui.o [1]
+asc2_1608                0x800'14c8  0x5f0  Data  Gb  gui.o [1]
+delay_init               0x800'1421   0x26  Code  Gb  delay.o [1]
+delay_ms                 0x800'1479   0x34  Code  Gb  delay.o [1]
+delay_us                 0x800'1447   0x32  Code  Gb  delay.o [1]
+dht11_portin             0x800'22e1   0x26  Code  Gb  dht11.o [1]
+dht11_portout            0x800'2307   0x26  Code  Gb  dht11.o [1]
+dht11_read_bit           0x800'2367   0x36  Code  Gb  dht11.o [1]
+dht11_read_byte          0x800'239d   0x20  Code  Gb  dht11.o [1]
+dht11_read_data          0x800'23bd   0x80  Code  Gb  dht11.o [1]
+dht11_reset              0x800'232d   0x2c  Code  Gb  dht11.o [1]
+dht11_scan               0x800'2359    0xe  Code  Gb  dht11.o [1]
+exit                     0x800'2907    0x4  Code  Gb  exit.o [2]
+fac_ms                  0x2000'0026    0x2  Data  Lc  delay.o [1]
+fac_us                  0x2000'0030    0x1  Data  Lc  delay.o [1]
+key0                    0x2000'0028    0x2  Data  Gb  key.o [1]
+key1                    0x2000'002a    0x2  Data  Gb  key.o [1]
+key2                    0x2000'002c    0x2  Data  Gb  key.o [1]
+key3                    0x2000'002e    0x2  Data  Gb  key.o [1]
+lcddev                  0x2000'0010   0x10  Data  Gb  tft.o [1]
+led_gpio_init            0x800'2795   0x74  Code  Gb  gpio_config.o [1]
+main                     0x800'2809   0x6c  Code  Gb  main.o [1]
+model                    0x800'0325    0xa  Code  Gb  gui.o [1]
+my_printf                0x800'09fd  0x23a  Code  Gb  gui.o [1]
+mypow                    0x800'030d   0x18  Code  Gb  gui.o [1]
+numlen                   0x800'032f   0x1e  Code  Gb  gui.o [1]
+spi2_config              0x800'0cbd   0x4c  Code  Gb  tft.o [1]
+spi2_related_gpio_init   0x800'0c7d   0x40  Code  Gb  tft.o [1]
+spi2_related_nvic_init   0x800'0d09   0x2a  Code  Gb  tft.o [1]
+spi2_related_rcc_init    0x800'0c67   0x16  Code  Gb  tft.o [1]
+strlen                   0x800'11c5         Code  Gb  strlen.o [3]
+tfont16                  0x800'2684  0x110  Data  Gb  gui.o [1]
+tfont24                  0x800'2444  0x128  Data  Gb  gui.o [1]
+tfont32                  0x800'1f2c  0x208  Data  Gb  gui.o [1]
+
+
+[1] = E:\IAR Systems\workspace\tft_display\Debug\Obj
+[2] = dl7M_tlf.a
+[3] = rt7M_tl.a
+[4] = shb_l.a
+
+  7 056 bytes of readonly  code memory
+  3 807 bytes of readonly  data memory
+  2 097 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

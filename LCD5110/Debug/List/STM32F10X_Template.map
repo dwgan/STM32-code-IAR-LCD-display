@@ -1,0 +1,306 @@
+###############################################################################
+#
+# IAR ELF Linker V8.30.1.114/W32 for ARM                  20/Aug/2018  13:55:24
+# Copyright 2007-2018 IAR Systems AB.
+#
+#    Output file  =  
+#        D:\IAR Systems\workspace\LCD5110\Debug\Exe\STM32F10X_Template.out
+#    Map file     =  
+#        D:\IAR Systems\workspace\LCD5110\Debug\List\STM32F10X_Template.map
+#    Command line =  
+#        -f C:\Users\93244\AppData\Local\Temp\EW4930.tmp ("D:\IAR
+#        Systems\workspace\LCD5110\Debug\Obj\main.o" "D:\IAR
+#        Systems\workspace\LCD5110\Debug\Obj\misc.o" "D:\IAR
+#        Systems\workspace\LCD5110\Debug\Obj\nokia5110.o" "D:\IAR
+#        Systems\workspace\LCD5110\Debug\Obj\startup_stm32f10x_md.o" "D:\IAR
+#        Systems\workspace\LCD5110\Debug\Obj\stm32f10x_adc.o" "D:\IAR
+#        Systems\workspace\LCD5110\Debug\Obj\stm32f10x_bkp.o" "D:\IAR
+#        Systems\workspace\LCD5110\Debug\Obj\stm32f10x_can.o" "D:\IAR
+#        Systems\workspace\LCD5110\Debug\Obj\stm32f10x_cec.o" "D:\IAR
+#        Systems\workspace\LCD5110\Debug\Obj\stm32f10x_crc.o" "D:\IAR
+#        Systems\workspace\LCD5110\Debug\Obj\stm32f10x_dac.o" "D:\IAR
+#        Systems\workspace\LCD5110\Debug\Obj\stm32f10x_dbgmcu.o" "D:\IAR
+#        Systems\workspace\LCD5110\Debug\Obj\stm32f10x_dma.o" "D:\IAR
+#        Systems\workspace\LCD5110\Debug\Obj\stm32f10x_exti.o" "D:\IAR
+#        Systems\workspace\LCD5110\Debug\Obj\stm32f10x_flash.o" "D:\IAR
+#        Systems\workspace\LCD5110\Debug\Obj\stm32f10x_fsmc.o" "D:\IAR
+#        Systems\workspace\LCD5110\Debug\Obj\stm32f10x_gpio.o" "D:\IAR
+#        Systems\workspace\LCD5110\Debug\Obj\stm32f10x_i2c.o" "D:\IAR
+#        Systems\workspace\LCD5110\Debug\Obj\stm32f10x_it.o" "D:\IAR
+#        Systems\workspace\LCD5110\Debug\Obj\stm32f10x_iwdg.o" "D:\IAR
+#        Systems\workspace\LCD5110\Debug\Obj\stm32f10x_pwr.o" "D:\IAR
+#        Systems\workspace\LCD5110\Debug\Obj\stm32f10x_rcc.o" "D:\IAR
+#        Systems\workspace\LCD5110\Debug\Obj\stm32f10x_rtc.o" "D:\IAR
+#        Systems\workspace\LCD5110\Debug\Obj\stm32f10x_sdio.o" "D:\IAR
+#        Systems\workspace\LCD5110\Debug\Obj\stm32f10x_spi.o" "D:\IAR
+#        Systems\workspace\LCD5110\Debug\Obj\stm32f10x_tim.o" "D:\IAR
+#        Systems\workspace\LCD5110\Debug\Obj\stm32f10x_usart.o" "D:\IAR
+#        Systems\workspace\LCD5110\Debug\Obj\stm32f10x_wwdg.o" "D:\IAR
+#        Systems\workspace\LCD5110\Debug\Obj\system_stm32f10x.o"
+#        --no_out_extension -o "D:\IAR
+#        Systems\workspace\LCD5110\Debug\Exe\STM32F10X_Template.out" --map
+#        "D:\IAR Systems\workspace\LCD5110\Debug\List\STM32F10X_Template.map"
+#        --config "D:\IAR Systems\workspace\LCD5110\stm32f10x_flash.icf"
+#        --semihosting --entry __iar_program_start --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because no calls to memory allocation
+functions were found in the application outside of system library
+functions, and there are calls to deallocation functions in the
+application.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at 0x800'0000 { ro section .intvec };
+"P1":  place in [from 0x800'0000 to 0x80f'ffff] { ro };
+define block CSTACK with size = 1K, alignment = 8 { };
+define block HEAP with size = 512, alignment = 8 { };
+"P2":  place in [from 0x2000'0000 to 0x2001'7fff] {
+          rw, block CSTACK, block HEAP };
+
+  Section          Kind         Address   Size  Object
+  -------          ----         -------   ----  ------
+"A0":                                     0xec
+  .intvec          ro code   0x800'0000   0xec  startup_stm32f10x_md.o [1]
+                           - 0x800'00ec   0xec
+
+"P1":                                    0x9b0
+  .text            ro code   0x800'00ec  0x2f0  nokia5110.o [1]
+  .text            ro code   0x800'03dc   0xcc  stm32f10x_gpio.o [1]
+  .text            ro code   0x800'04a8   0x20  stm32f10x_rcc.o [1]
+  .text            ro code   0x800'04c8   0x66  ABImemset.o [3]
+  .text            ro code   0x800'052e   0x3a  zero_init3.o [3]
+  .rodata          const     0x800'0568  0x23c  nokia5110.o [1]
+  .text            ro code   0x800'07a4  0x118  system_stm32f10x.o [1]
+  .text            ro code   0x800'08bc   0x48  main.o [1]
+  .text            ro code   0x800'0904   0x28  data_init.o [3]
+  .iar.init_table  const     0x800'092c   0x10  - Linker created -
+  .text            ro code   0x800'093c   0x1e  cmain.o [3]
+  .text            ro code   0x800'095a    0x4  low_level_init.o [2]
+  .text            ro code   0x800'095e    0x4  exit.o [2]
+  .text            ro code   0x800'0964    0xa  cexit.o [3]
+  .text            ro code   0x800'0970   0x14  exit.o [4]
+  .rodata          const     0x800'0984   0x18  main.o [1]
+  .text            ro code   0x800'099c   0x12  stm32f10x_it.o [1]
+  .text            ro code   0x800'09b0   0x10  startup_stm32f10x_md.o [1]
+  .text            ro code   0x800'09c0    0xc  cstartup_M.o [3]
+  .text            ro code   0x800'09cc    0x4  startup_stm32f10x_md.o [1]
+  .text            ro code   0x800'09d0    0x4  startup_stm32f10x_md.o [1]
+  .text            ro code   0x800'09d4    0x4  startup_stm32f10x_md.o [1]
+  .text            ro code   0x800'09d8    0x4  startup_stm32f10x_md.o [1]
+  .text            ro code   0x800'09dc    0x4  startup_stm32f10x_md.o [1]
+  .text            ro code   0x800'09e0    0x4  startup_stm32f10x_md.o [1]
+  .text            ro code   0x800'09e4    0x4  startup_stm32f10x_md.o [1]
+  .text            ro code   0x800'09e8    0x4  startup_stm32f10x_md.o [1]
+  .text            ro code   0x800'09ec    0x4  startup_stm32f10x_md.o [1]
+  .text            ro code   0x800'09f0    0x4  startup_stm32f10x_md.o [1]
+  .text            ro code   0x800'09f4    0x4  startup_stm32f10x_md.o [1]
+  .text            ro code   0x800'09f8    0x4  startup_stm32f10x_md.o [1]
+  .text            ro code   0x800'09fc    0x4  startup_stm32f10x_md.o [1]
+  .text            ro code   0x800'0a00    0x4  startup_stm32f10x_md.o [1]
+  .text            ro code   0x800'0a04    0x4  startup_stm32f10x_md.o [1]
+  .text            ro code   0x800'0a08    0x4  startup_stm32f10x_md.o [1]
+  .text            ro code   0x800'0a0c    0x4  startup_stm32f10x_md.o [1]
+  .text            ro code   0x800'0a10    0x4  startup_stm32f10x_md.o [1]
+  .text            ro code   0x800'0a14    0x4  startup_stm32f10x_md.o [1]
+  .text            ro code   0x800'0a18    0x4  startup_stm32f10x_md.o [1]
+  .text            ro code   0x800'0a1c    0x4  startup_stm32f10x_md.o [1]
+  .text            ro code   0x800'0a20    0x4  startup_stm32f10x_md.o [1]
+  .text            ro code   0x800'0a24    0x4  startup_stm32f10x_md.o [1]
+  .text            ro code   0x800'0a28    0x4  startup_stm32f10x_md.o [1]
+  .text            ro code   0x800'0a2c    0x4  startup_stm32f10x_md.o [1]
+  .text            ro code   0x800'0a30    0x4  startup_stm32f10x_md.o [1]
+  .text            ro code   0x800'0a34    0x4  startup_stm32f10x_md.o [1]
+  .text            ro code   0x800'0a38    0x4  startup_stm32f10x_md.o [1]
+  .text            ro code   0x800'0a3c    0x4  startup_stm32f10x_md.o [1]
+  .text            ro code   0x800'0a40    0x4  startup_stm32f10x_md.o [1]
+  .text            ro code   0x800'0a44    0x4  startup_stm32f10x_md.o [1]
+  .text            ro code   0x800'0a48    0x4  startup_stm32f10x_md.o [1]
+  .text            ro code   0x800'0a4c    0x4  startup_stm32f10x_md.o [1]
+  .text            ro code   0x800'0a50    0x4  startup_stm32f10x_md.o [1]
+  .text            ro code   0x800'0a54    0x4  startup_stm32f10x_md.o [1]
+  .text            ro code   0x800'0a58    0x4  startup_stm32f10x_md.o [1]
+  .text            ro code   0x800'0a5c    0x4  startup_stm32f10x_md.o [1]
+  .text            ro code   0x800'0a60    0x4  startup_stm32f10x_md.o [1]
+  .text            ro code   0x800'0a64    0x4  startup_stm32f10x_md.o [1]
+  .text            ro code   0x800'0a68    0x4  startup_stm32f10x_md.o [1]
+  .text            ro code   0x800'0a6c    0x4  startup_stm32f10x_md.o [1]
+  .text            ro code   0x800'0a70    0x4  startup_stm32f10x_md.o [1]
+  .text            ro code   0x800'0a74    0x4  startup_stm32f10x_md.o [1]
+  .text            ro code   0x800'0a78    0x4  startup_stm32f10x_md.o [1]
+  .text            ro code   0x800'0a7c    0x4  startup_stm32f10x_md.o [1]
+  .text            ro code   0x800'0a80    0x4  startup_stm32f10x_md.o [1]
+  .text            ro code   0x800'0a84    0x4  startup_stm32f10x_md.o [1]
+  .text            ro code   0x800'0a88    0x4  startup_stm32f10x_md.o [1]
+  .text            ro code   0x800'0a8c    0x4  startup_stm32f10x_md.o [1]
+  .text            ro code   0x800'0a90    0x4  startup_stm32f10x_md.o [1]
+  .text            ro code   0x800'0a94    0x4  startup_stm32f10x_md.o [1]
+  .text            ro code   0x800'0a98    0x4  startup_stm32f10x_md.o [1]
+  .rodata          const     0x800'0a9c    0x0  zero_init3.o [3]
+                           - 0x800'0a9c  0x9b0
+
+"P2", part 1 of 2:                       0x158
+  .bss             zero     0x2000'0000  0x150  nokia5110.o [1]
+  .bss             zero     0x2000'0150    0x4  nokia5110.o [1]
+  .bss             zero     0x2000'0154    0x1  nokia5110.o [1]
+                          - 0x2000'0155  0x155
+
+"P2", part 2 of 2:                       0x400
+  CSTACK                    0x2000'0158  0x400  <Block>
+    CSTACK         uninit   0x2000'0158  0x400  <Block tail>
+                          - 0x2000'0558  0x400
+
+Unused ranges:
+
+         From           To      Size
+         ----           --      ----
+   0x800'0a9c   0x80f'ffff  0xf'f564
+  0x2000'0558  0x2001'7fff  0x1'7aa8
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address      Size
+          -------      ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x155:
+          0x2000'0000  0x155
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                  ro code  ro data  rw data
+    ------                  -------  -------  -------
+command line/config:
+    -------------------------------------------------
+    Total:
+
+D:\IAR Systems\workspace\LCD5110\Debug\Obj: [1]
+    main.o                       72       24
+    nokia5110.o                 752      572      341
+    startup_stm32f10x_md.o      460
+    stm32f10x_gpio.o            204
+    stm32f10x_it.o               18
+    stm32f10x_rcc.o              32
+    system_stm32f10x.o          280
+    -------------------------------------------------
+    Total:                    1 818      596      341
+
+dl7M_tln.a: [2]
+    exit.o                        4
+    low_level_init.o              4
+    -------------------------------------------------
+    Total:                        8
+
+rt7M_tl.a: [3]
+    ABImemset.o                 102
+    cexit.o                      10
+    cmain.o                      30
+    cstartup_M.o                 12
+    data_init.o                  40
+    zero_init3.o                 58
+    -------------------------------------------------
+    Total:                      252
+
+shb_l.a: [4]
+    exit.o                       20
+    -------------------------------------------------
+    Total:                       20
+
+    Gaps                          6
+    Linker created                        16    1 024
+-----------------------------------------------------
+    Grand Total:              2 104      612    1 365
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address   Size  Type      Object
+-----                       -------   ----  ----      ------
+.iar.init_table$$Base    0x800'092c          --   Gb  - Linker created -
+.iar.init_table$$Limit   0x800'093c          --   Gb  - Linker created -
+?main                    0x800'093d         Code  Gb  cmain.o [3]
+BusFault_Handler         0x800'09a3    0x2  Code  Gb  stm32f10x_it.o [1]
+CSTACK$$Base            0x2000'0158          --   Gb  - Linker created -
+CSTACK$$Limit           0x2000'0558          --   Gb  - Linker created -
+DebugMon_Handler         0x800'09a9    0x2  Code  Gb  stm32f10x_it.o [1]
+Font_Code                0x800'0568  0x23c  Data  Gb  nokia5110.o [1]
+GPIO_Init                0x800'03dd   0xc0  Code  Gb  stm32f10x_gpio.o [1]
+GPIO_ResetBits           0x800'04a3    0x6  Code  Gb  stm32f10x_gpio.o [1]
+GPIO_SetBits             0x800'049d    0x6  Code  Gb  stm32f10x_gpio.o [1]
+HardFault_Handler        0x800'099f    0x2  Code  Gb  stm32f10x_it.o [1]
+LCD_Clear_All            0x800'01e7   0x30  Code  Gb  nokia5110.o [1]
+LCD_Init                 0x800'0217   0x54  Code  Gb  nokia5110.o [1]
+LCD_Set_XY               0x800'018d   0x26  Code  Gb  nokia5110.o [1]
+LCD_Write_Byte           0x800'00ed   0x66  Code  Gb  nokia5110.o [1]
+LCD_Write_Char           0x800'01b3   0x34  Code  Gb  nokia5110.o [1]
+MemManage_Handler        0x800'09a1    0x2  Code  Gb  stm32f10x_it.o [1]
+NMI_Handler              0x800'099d    0x2  Code  Gb  stm32f10x_it.o [1]
+PendSV_Handler           0x800'09ab    0x2  Code  Gb  stm32f10x_it.o [1]
+RCC_APB2PeriphClockCmd   0x800'04a9   0x1c  Code  Gb  stm32f10x_rcc.o [1]
+Region$$Table$$Base      0x800'092c          --   Gb  - Linker created -
+Region$$Table$$Limit     0x800'093c          --   Gb  - Linker created -
+SVC_Handler              0x800'09a7    0x2  Code  Gb  stm32f10x_it.o [1]
+SetSysClock              0x800'07e9    0x8  Code  Lc  system_stm32f10x.o [1]
+SetSysClockTo72          0x800'07f1   0xae  Code  Lc  system_stm32f10x.o [1]
+SysTick_Handler          0x800'09ad    0x2  Code  Gb  stm32f10x_it.o [1]
+SystemInit               0x800'07a5   0x44  Code  Gb  system_stm32f10x.o [1]
+UsageFault_Handler       0x800'09a5    0x2  Code  Gb  stm32f10x_it.o [1]
+__aeabi_memset           0x800'04c9         Code  Gb  ABImemset.o [3]
+__cmain                  0x800'093d         Code  Gb  cmain.o [3]
+__exit                   0x800'0971   0x14  Code  Gb  exit.o [4]
+__iar_Memset             0x800'04c9         Code  Gb  ABImemset.o [3]
+__iar_Memset_word        0x800'04d1         Code  Gb  ABImemset.o [3]
+__iar_data_init3         0x800'0905   0x28  Code  Gb  data_init.o [3]
+__iar_program_start      0x800'09c1         Code  Gb  cstartup_M.o [3]
+__iar_zero_init3         0x800'052f   0x3a  Code  Gb  zero_init3.o [3]
+__low_level_init         0x800'095b    0x4  Code  Gb  low_level_init.o [2]
+__vector_table           0x800'0000         Data  Gb  startup_stm32f10x_md.o [1]
+_call_main               0x800'0949         Code  Gb  cmain.o [3]
+_exit                    0x800'0965         Code  Gb  cexit.o [3]
+_main                    0x800'0957         Code  Gb  cmain.o [3]
+delay_us                 0x800'0179   0x14  Code  Gb  nokia5110.o [1]
+exit                     0x800'095f    0x4  Code  Gb  exit.o [2]
+main                     0x800'08bd   0x48  Code  Gb  main.o [1]
+printf                   0x800'026b  0x15a  Code  Gb  nokia5110.o [1]
+printf::DisplayBuff     0x2000'0000  0x150  Data  Lc  nokia5110.o [1]
+printf::Num             0x2000'0150    0x4  Data  Lc  nokia5110.o [1]
+printf::X_Set           0x2000'0154    0x1  Data  Lc  nokia5110.o [1]
+spi_Init                 0x800'0153   0x26  Code  Gb  nokia5110.o [1]
+
+
+[1] = D:\IAR Systems\workspace\LCD5110\Debug\Obj
+[2] = dl7M_tln.a
+[3] = rt7M_tl.a
+[4] = shb_l.a
+
+  2 104 bytes of readonly  code memory
+    612 bytes of readonly  data memory
+  1 365 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

@@ -1,0 +1,15 @@
+"D:\IAR Systems\arm\bin\armproc.dll" 
+
+"D:\IAR Systems\arm\bin\armstlink2.dll" 
+
+"D:\IAR Systems\workspace\LCD5110\Debug\Exe\STM32F10X_Template.out" 
+
+--plugin="D:\IAR Systems\arm\bin\armbat.dll" 
+
+--device_macro="D:\IAR Systems\arm\config\debugger\ST\STM32F1xx.dmac" 
+
+--flash_loader="D:\IAR Systems\arm\config\flashloader\ST\FlashSTM32F10xx8.board" 
+
+
+
+
